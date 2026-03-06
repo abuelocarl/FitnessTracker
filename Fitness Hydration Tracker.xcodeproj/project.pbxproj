@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		156EBA052F5B3F0B00729D5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 156EB9EF2F5B3F0900729D5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 156EB9F62F5B3F0900729D5D;
+			remoteInfo = "Fitness Hydration Tracker";
+		};
+		156EBA0F2F5B3F0B00729D5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 156EB9EF2F5B3F0900729D5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 156EB9F62F5B3F0900729D5D;
+			remoteInfo = "Fitness Hydration Tracker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		156EB9F72F5B3F0900729D5D /* Fitness Hydration Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Hydration Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		156EBA042F5B3F0B00729D5D /* Fitness Hydration TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fitness Hydration TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		156EBA0E2F5B3F0B00729D5D /* Fitness Hydration TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fitness Hydration TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		156EB9F92F5B3F0900729D5D /* Fitness Hydration Tracker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Fitness Hydration Tracker";
+			sourceTree = "<group>";
+		};
+		156EBA072F5B3F0B00729D5D /* Fitness Hydration TrackerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Fitness Hydration TrackerTests";
+			sourceTree = "<group>";
+		};
+		156EBA112F5B3F0B00729D5D /* Fitness Hydration TrackerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Fitness Hydration TrackerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		156EB9F42F5B3F0900729D5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		156EBA012F5B3F0B00729D5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		156EBA0B2F5B3F0B00729D5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		156EB9EE2F5B3F0900729D5D = {
+			isa = PBXGroup;
+			children = (
+				156EB9F92F5B3F0900729D5D /* Fitness Hydration Tracker */,
+				156EBA072F5B3F0B00729D5D /* Fitness Hydration TrackerTests */,
+				156EBA112F5B3F0B00729D5D /* Fitness Hydration TrackerUITests */,
+				156EB9F82F5B3F0900729D5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		156EB9F82F5B3F0900729D5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				156EB9F72F5B3F0900729D5D /* Fitness Hydration Tracker.app */,
+				156EBA042F5B3F0B00729D5D /* Fitness Hydration TrackerTests.xctest */,
+				156EBA0E2F5B3F0B00729D5D /* Fitness Hydration TrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		156EB9F62F5B3F0900729D5D /* Fitness Hydration Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 156EBA182F5B3F0B00729D5D /* Build configuration list for PBXNativeTarget "Fitness Hydration Tracker" */;
+			buildPhases = (
+				156EB9F32F5B3F0900729D5D /* Sources */,
+				156EB9F42F5B3F0900729D5D /* Frameworks */,
+				156EB9F52F5B3F0900729D5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				156EB9F92F5B3F0900729D5D /* Fitness Hydration Tracker */,
+			);
+			name = "Fitness Hydration Tracker";
+			packageProductDependencies = (
+			);
+			productName = "Fitness Hydration Tracker";
+			productReference = 156EB9F72F5B3F0900729D5D /* Fitness Hydration Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		156EBA032F5B3F0B00729D5D /* Fitness Hydration TrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 156EBA1B2F5B3F0B00729D5D /* Build configuration list for PBXNativeTarget "Fitness Hydration TrackerTests" */;
+			buildPhases = (
+				156EBA002F5B3F0B00729D5D /* Sources */,
+				156EBA012F5B3F0B00729D5D /* Frameworks */,
+				156EBA022F5B3F0B00729D5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				156EBA062F5B3F0B00729D5D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				156EBA072F5B3F0B00729D5D /* Fitness Hydration TrackerTests */,
+			);
+			name = "Fitness Hydration TrackerTests";
+			packageProductDependencies = (
+			);
+			productName = "Fitness Hydration TrackerTests";
+			productReference = 156EBA042F5B3F0B00729D5D /* Fitness Hydration TrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		156EBA0D2F5B3F0B00729D5D /* Fitness Hydration TrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 156EBA1E2F5B3F0B00729D5D /* Build configuration list for PBXNativeTarget "Fitness Hydration TrackerUITests" */;
+			buildPhases = (
+				156EBA0A2F5B3F0B00729D5D /* Sources */,
+				156EBA0B2F5B3F0B00729D5D /* Frameworks */,
+				156EBA0C2F5B3F0B00729D5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				156EBA102F5B3F0B00729D5D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				156EBA112F5B3F0B00729D5D /* Fitness Hydration TrackerUITests */,
+			);
+			name = "Fitness Hydration TrackerUITests";
+			packageProductDependencies = (
+			);
+			productName = "Fitness Hydration TrackerUITests";
+			productReference = 156EBA0E2F5B3F0B00729D5D /* Fitness Hydration TrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		156EB9EF2F5B3F0900729D5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					156EB9F62F5B3F0900729D5D = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					156EBA032F5B3F0B00729D5D = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = 156EB9F62F5B3F0900729D5D;
+					};
+					156EBA0D2F5B3F0B00729D5D = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = 156EB9F62F5B3F0900729D5D;
+					};
+				};
+			};
+			buildConfigurationList = 156EB9F22F5B3F0900729D5D /* Build configuration list for PBXProject "Fitness Hydration Tracker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 156EB9EE2F5B3F0900729D5D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 156EB9F82F5B3F0900729D5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				156EB9F62F5B3F0900729D5D /* Fitness Hydration Tracker */,
+				156EBA032F5B3F0B00729D5D /* Fitness Hydration TrackerTests */,
+				156EBA0D2F5B3F0B00729D5D /* Fitness Hydration TrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		156EB9F52F5B3F0900729D5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		156EBA022F5B3F0B00729D5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		156EBA0C2F5B3F0B00729D5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		156EB9F32F5B3F0900729D5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		156EBA002F5B3F0B00729D5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		156EBA0A2F5B3F0B00729D5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		156EBA062F5B3F0B00729D5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 156EB9F62F5B3F0900729D5D /* Fitness Hydration Tracker */;
+			targetProxy = 156EBA052F5B3F0B00729D5D /* PBXContainerItemProxy */;
+		};
+		156EBA102F5B3F0B00729D5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 156EB9F62F5B3F0900729D5D /* Fitness Hydration Tracker */;
+			targetProxy = 156EBA0F2F5B3F0B00729D5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		156EBA162F5B3F0B00729D5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = KVGZ992L43;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		156EBA172F5B3F0B00729D5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = KVGZ992L43;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		156EBA192F5B3F0B00729D5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVGZ992L43;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "unclecarl.Fitness-Hydration-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		156EBA1A2F5B3F0B00729D5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVGZ992L43;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "unclecarl.Fitness-Hydration-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		156EBA1C2F5B3F0B00729D5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVGZ992L43;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "unclecarl.Fitness-Hydration-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitness Hydration Tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fitness Hydration Tracker";
+			};
+			name = Debug;
+		};
+		156EBA1D2F5B3F0B00729D5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVGZ992L43;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "unclecarl.Fitness-Hydration-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitness Hydration Tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fitness Hydration Tracker";
+			};
+			name = Release;
+		};
+		156EBA1F2F5B3F0B00729D5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVGZ992L43;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "unclecarl.Fitness-Hydration-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fitness Hydration Tracker";
+			};
+			name = Debug;
+		};
+		156EBA202F5B3F0B00729D5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KVGZ992L43;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "unclecarl.Fitness-Hydration-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fitness Hydration Tracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		156EB9F22F5B3F0900729D5D /* Build configuration list for PBXProject "Fitness Hydration Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				156EBA162F5B3F0B00729D5D /* Debug */,
+				156EBA172F5B3F0B00729D5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		156EBA182F5B3F0B00729D5D /* Build configuration list for PBXNativeTarget "Fitness Hydration Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				156EBA192F5B3F0B00729D5D /* Debug */,
+				156EBA1A2F5B3F0B00729D5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		156EBA1B2F5B3F0B00729D5D /* Build configuration list for PBXNativeTarget "Fitness Hydration TrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				156EBA1C2F5B3F0B00729D5D /* Debug */,
+				156EBA1D2F5B3F0B00729D5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		156EBA1E2F5B3F0B00729D5D /* Build configuration list for PBXNativeTarget "Fitness Hydration TrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				156EBA1F2F5B3F0B00729D5D /* Debug */,
+				156EBA202F5B3F0B00729D5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 156EB9EF2F5B3F0900729D5D /* Project object */;
+}
