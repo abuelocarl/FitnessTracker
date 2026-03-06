@@ -33,10 +33,15 @@ struct ContentView: View {
             .ignoresSafeArea()
 
             TabView(selection: $selectedTab) {
-                TodayView(vm: vm).tag(0)
-                ProfileView(vm: vm).tag(1)
+                TodayView(vm: vm)
+                    .tag(0)
+                    .tabItem { Label("Hydrate", systemImage: "drop.fill") }
+                ProfileView(vm: vm)
+                    .tag(1)
+                    .tabItem { Label("Profile", systemImage: "person.fill") }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
+            .toolbar(.hidden, for: .tabBar)
 
             BeachTabBar(selectedTab: $selectedTab)
         }
