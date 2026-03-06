@@ -24,7 +24,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            // Ocean background
+            // Ocean background — fills everything
             LinearGradient(
                 colors: [.oceanDeep, .oceanMid, .seafoam],
                 startPoint: .top,
@@ -32,16 +32,17 @@ struct ContentView: View {
             )
             .ignoresSafeArea()
 
-            TabView(selection: $selectedTab) {
+            // Tab content — no TabView, so iOS never renders a system tab bar
+            ZStack {
                 TodayView(vm: vm)
-                    .tag(0)
-                    .tabItem { Label("Hydrate", systemImage: "drop.fill") }
+                    .opacity(selectedTab == 0 ? 1 : 0)
+                    .allowsHitTesting(selectedTab == 0)
+
                 ProfileView(vm: vm)
-                    .tag(1)
-                    .tabItem { Label("Profile", systemImage: "person.fill") }
+                    .opacity(selectedTab == 1 ? 1 : 0)
+                    .allowsHitTesting(selectedTab == 1)
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .toolbar(.hidden, for: .tabBar)
+            .animation(.easeInOut(duration: 0.2), value: selectedTab)
 
             BeachTabBar(selectedTab: $selectedTab)
         }
