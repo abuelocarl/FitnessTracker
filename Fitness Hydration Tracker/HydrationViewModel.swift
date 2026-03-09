@@ -15,34 +15,42 @@ final class HydrationViewModel {
     let weather = WeatherService()
     let health  = HealthKitService()
 
-    // MARK: - Persisted user settings
+    // MARK: - Stored properties
+    // Using plain stored vars — @Observable instruments these directly.
+    // didSet keeps UserDefaults in sync after init (didSet is NOT called
+    // for assignments made during init, which is correct behavior here).
 
-    /// Weight stored in lbs; converted to kg for the formula
-    var weightLbs: Double {
-        get { UserDefaults.standard.double(forKey: "weightLbs").positiveOrDefault(154) }
-        set { UserDefaults.standard.set(newValue, forKey: "weightLbs") }
+    var weightLbs: Double = 154 {
+        didSet { UserDefaults.standard.set(weightLbs, forKey: "weightLbs") }
     }
+
+    var hydrationLevel: HydrationLevel = .moderate {
+        didSet { UserDefaults.standard.set(hydrationLevel.rawValue, forKey: "hydrationLevel") }
+    }
+
+    var loggedML: Double = 0 {
+        didSet { UserDefaults.standard.set(loggedML, forKey: todayKey) }
+    }
+
+    // MARK: - Init
+
+    init() {
+        let storedWeight = UserDefaults.standard.double(forKey: "weightLbs")
+        if storedWeight > 0 { weightLbs = storedWeight }
+
+        if let raw = UserDefaults.standard.string(forKey: "hydrationLevel"),
+           let level = HydrationLevel(rawValue: raw) {
+            hydrationLevel = level
+        }
+
+        let fmt = DateFormatter()
+        fmt.dateFormat = "yyyy-MM-dd"
+        loggedML = UserDefaults.standard.double(forKey: "logged_\(fmt.string(from: Date()))")
+    }
+
+    // MARK: - Derived
 
     var weightKg: Double { weightLbs * 0.453592 }
-
-    var hydrationLevel: HydrationLevel {
-        get {
-            guard
-                let raw   = UserDefaults.standard.string(forKey: "hydrationLevel"),
-                let level = HydrationLevel(rawValue: raw)
-            else { return .moderate }
-            return level
-        }
-        set { UserDefaults.standard.set(newValue.rawValue, forKey: "hydrationLevel") }
-    }
-
-    // MARK: - Today's logged water (persisted by calendar day)
-
-    var loggedML: Double {
-        get { UserDefaults.standard.double(forKey: todayKey) }
-        set { UserDefaults.standard.set(newValue, forKey: todayKey) }
-    }
-
     var loggedCups: Double { loggedML / HydrationResult.mlPerCup }
 
     private var todayKey: String {
@@ -50,8 +58,6 @@ final class HydrationViewModel {
         fmt.dateFormat = "yyyy-MM-dd"
         return "logged_\(fmt.string(from: Date()))"
     }
-
-    // MARK: - Computed hydration values
 
     var result: HydrationResult {
         let w = weather.weather ?? WeatherData(
@@ -94,13 +100,5 @@ final class HydrationViewModel {
     func refresh() async {
         await weather.refresh()
         await health.fetchTodaySteps()
-    }
-}
-
-// MARK: - Helpers
-
-private extension Double {
-    func positiveOrDefault(_ fallback: Double) -> Double {
-        self > 0 ? self : fallback
     }
 }
