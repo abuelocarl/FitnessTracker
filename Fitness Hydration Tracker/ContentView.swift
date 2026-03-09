@@ -8,13 +8,25 @@ import UIKit
 
 // MARK: - Tab Bar Suppressor
 
-/// Reaches into the live UIKit hierarchy and hides any UITabBarController
-/// that iOS may inject, even when no SwiftUI TabView is present.
+/// Walks every UIWindow in every active UIWindowScene and hides any
+/// UITabBarController tab bar iOS may have injected, regardless of whether
+/// our representable VC happens to be inside one.
 private struct TabBarSuppressor: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController { UIViewController() }
     func updateUIViewController(_ vc: UIViewController, context: Context) {
-        vc.tabBarController?.tabBar.isHidden = true
-        vc.tabBarController?.tabBar.alpha    = 0
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .compactMap { $0.rootViewController }
+            .forEach { suppress($0) }
+    }
+
+    private func suppress(_ vc: UIViewController) {
+        if let tab = vc as? UITabBarController {
+            tab.tabBar.isHidden = true
+            tab.tabBar.frame   = .zero
+        }
+        vc.children.forEach { suppress($0) }
     }
 }
 
@@ -32,12 +44,12 @@ extension Color {
 // MARK: - Root
 
 struct ContentView: View {
-    @State private var vm          = HydrationViewModel()
+    @StateObject private var vm     = HydrationViewModel()
     @State private var selectedTab = 0
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            // Ocean background — fills everything
+            // Ocean gradient — fills the entire screen
             LinearGradient(
                 colors: [.oceanDeep, .oceanMid, .seafoam],
                 startPoint: .top,
@@ -45,24 +57,26 @@ struct ContentView: View {
             )
             .ignoresSafeArea()
 
-            // Tab content — no TabView, so iOS never renders a system tab bar
-            ZStack {
+            // TabView with NAMED items so iOS never shows "?" placeholders.
+            // .toolbar(.hidden) removes the system bar; BeachTabBar drives
+            // tab switching instead.
+            TabView(selection: $selectedTab) {
                 TodayView(vm: vm)
-                    .opacity(selectedTab == 0 ? 1 : 0)
-                    .allowsHitTesting(selectedTab == 0)
+                    .tabItem { Label("Hydrate", systemImage: "drop.fill") }
+                    .tag(0)
 
                 ProfileView(vm: vm)
-                    .opacity(selectedTab == 1 ? 1 : 0)
-                    .allowsHitTesting(selectedTab == 1)
+                    .tabItem { Label("Profile", systemImage: "person.fill") }
+                    .tag(1)
             }
-            .animation(.easeInOut(duration: 0.2), value: selectedTab)
+            .toolbar(.hidden, for: .tabBar)
+            .background(.clear)
+            .background(TabBarSuppressor())  // belt-and-suspenders UIKit safety net
 
             BeachTabBar(selectedTab: $selectedTab)
         }
         .task { await vm.onAppear() }
         .preferredColorScheme(.dark)
-        .toolbarVisibility(.hidden, for: .tabBar)
-        .background(TabBarSuppressor())
     }
 }
 
@@ -116,7 +130,7 @@ struct BeachTabItem: View {
 // MARK: - Today Tab
 
 struct TodayView: View {
-    let vm: HydrationViewModel
+    @ObservedObject var vm: HydrationViewModel
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -136,6 +150,7 @@ struct TodayView: View {
             .padding(.horizontal, 20)
             .padding(.top, 16)
         }
+        .scrollContentBackground(.hidden)
     }
 
     // MARK: Header
@@ -462,7 +477,7 @@ struct BeachBreakdownRow: View {
 // MARK: - Profile / Configurator Tab
 
 struct ProfileView: View {
-    let vm: HydrationViewModel
+    @ObservedObject var vm: HydrationViewModel
     @State private var weightText = ""
 
     var body: some View {
@@ -490,6 +505,7 @@ struct ProfileView: View {
             .padding(.horizontal, 20)
             .padding(.top, 16)
         }
+        .scrollContentBackground(.hidden)
         .onAppear { weightText = String(format: "%.0f", vm.weightLbs) }
     }
 
