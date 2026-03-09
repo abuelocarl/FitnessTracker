@@ -8,13 +8,25 @@ import UIKit
 
 // MARK: - Tab Bar Suppressor
 
-/// Reaches into the live UIKit hierarchy and hides any UITabBarController
-/// that iOS may inject, even when no SwiftUI TabView is present.
+/// Walks every UIWindow in every active UIWindowScene and hides any
+/// UITabBarController tab bar iOS may have injected, regardless of whether
+/// our representable VC happens to be inside one.
 private struct TabBarSuppressor: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController { UIViewController() }
     func updateUIViewController(_ vc: UIViewController, context: Context) {
-        vc.tabBarController?.tabBar.isHidden = true
-        vc.tabBarController?.tabBar.alpha    = 0
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .compactMap { $0.rootViewController }
+            .forEach { suppress($0) }
+    }
+
+    private func suppress(_ vc: UIViewController) {
+        if let tab = vc as? UITabBarController {
+            tab.tabBar.isHidden = true
+            tab.tabBar.frame   = .zero
+        }
+        vc.children.forEach { suppress($0) }
     }
 }
 
@@ -32,7 +44,7 @@ extension Color {
 // MARK: - Root
 
 struct ContentView: View {
-    @State private var vm          = HydrationViewModel()
+    @StateObject private var vm     = HydrationViewModel()
     @State private var selectedTab = 0
 
     var body: some View {
@@ -116,7 +128,7 @@ struct BeachTabItem: View {
 // MARK: - Today Tab
 
 struct TodayView: View {
-    let vm: HydrationViewModel
+    @ObservedObject var vm: HydrationViewModel
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -462,7 +474,7 @@ struct BeachBreakdownRow: View {
 // MARK: - Profile / Configurator Tab
 
 struct ProfileView: View {
-    let vm: HydrationViewModel
+    @ObservedObject var vm: HydrationViewModel
     @State private var weightText = ""
 
     var body: some View {
