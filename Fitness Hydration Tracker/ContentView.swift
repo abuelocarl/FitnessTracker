@@ -80,6 +80,56 @@ struct ContentView: View {
     }
 }
 
+// MARK: - Custom Tab Icons (no SF Symbols — drawn entirely from SwiftUI shapes)
+
+/// Teardrop water-drop shape built from cubic bezier curves.
+private struct WaterDropShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        let w = rect.width, h = rect.height
+        let cx = w / 2
+        // The circular base sits flush at the bottom; its radius = w/2.
+        let r  = w / 2
+        let cy = h - r          // centre of the circular base
+
+        var p = Path()
+        p.move(to: CGPoint(x: cx, y: 0))
+
+        // Right side: top-point → right edge of circle
+        p.addCurve(
+            to:       CGPoint(x: w,  y: cy),
+            control1: CGPoint(x: w,  y: h * 0.18),
+            control2: CGPoint(x: w,  y: cy - r * 0.4)
+        )
+        // Bottom arc: right edge → bottom → left edge  (clockwise on screen)
+        p.addArc(
+            center:     CGPoint(x: cx, y: cy),
+            radius:     r,
+            startAngle: .degrees(0),
+            endAngle:   .degrees(180),
+            clockwise:  true         // UIKit coords: true = through the bottom
+        )
+        // Left side: left edge of circle → top-point
+        p.addCurve(
+            to:       CGPoint(x: cx, y: 0),
+            control1: CGPoint(x: 0,  y: cy - r * 0.4),
+            control2: CGPoint(x: 0,  y: h * 0.18)
+        )
+        return p
+    }
+}
+
+/// Person silhouette: filled circle (head) above a filled capsule (body).
+private struct PersonIcon: View {
+    var body: some View {
+        VStack(spacing: 1) {
+            Circle()
+                .frame(width: 9, height: 9)
+            Capsule()
+                .frame(width: 17, height: 9)
+        }
+    }
+}
+
 // MARK: - Bottom Tab Bar
 
 struct BeachTabBar: View {
@@ -87,8 +137,14 @@ struct BeachTabBar: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            BeachTabItem(icon: "drop.fill",   label: "Hydrate", tag: 0, selected: $selectedTab)
-            BeachTabItem(icon: "person.fill", label: "Profile", tag: 1, selected: $selectedTab)
+            BeachTabItem(tag: 0, label: "Hydrate", selected: $selectedTab) {
+                WaterDropShape()
+                    .frame(width: 18, height: 22)
+            }
+            BeachTabItem(tag: 1, label: "Profile", selected: $selectedTab) {
+                PersonIcon()
+                    .frame(width: 22, height: 22)
+            }
         }
         .padding(.horizontal, 40)
         .padding(.vertical, 12)
@@ -100,11 +156,11 @@ struct BeachTabBar: View {
     }
 }
 
-struct BeachTabItem: View {
-    let icon: String
+struct BeachTabItem<Icon: View>: View {
+    let tag:   Int
     let label: String
-    let tag: Int
     @Binding var selected: Int
+    @ViewBuilder let icon: () -> Icon
 
     var isOn: Bool { selected == tag }
 
@@ -113,12 +169,12 @@ struct BeachTabItem: View {
             withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) { selected = tag }
         } label: {
             VStack(spacing: 4) {
-                Image(systemName: icon)
-                    .font(.system(size: 20, weight: .semibold))
+                icon()
+                    .foregroundStyle(isOn ? Color.sandy : .white.opacity(0.45))
                 Text(label)
                     .font(.caption2.weight(.bold))
+                    .foregroundStyle(isOn ? Color.sandy : .white.opacity(0.45))
             }
-            .foregroundStyle(isOn ? Color.sandy : .white.opacity(0.45))
             .frame(maxWidth: .infinity)
             .scaleEffect(isOn ? 1.1 : 1.0)
             .animation(.spring(response: 0.3), value: isOn)
