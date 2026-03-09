@@ -4,6 +4,19 @@
 //
 
 import SwiftUI
+import UIKit
+
+// MARK: - Tab Bar Suppressor
+
+/// Reaches into the live UIKit hierarchy and hides any UITabBarController
+/// that iOS may inject, even when no SwiftUI TabView is present.
+private struct TabBarSuppressor: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController { UIViewController() }
+    func updateUIViewController(_ vc: UIViewController, context: Context) {
+        vc.tabBarController?.tabBar.isHidden = true
+        vc.tabBarController?.tabBar.alpha    = 0
+    }
+}
 
 // MARK: - Beach Palette
 
@@ -48,6 +61,8 @@ struct ContentView: View {
         }
         .task { await vm.onAppear() }
         .preferredColorScheme(.dark)
+        .toolbarVisibility(.hidden, for: .tabBar)
+        .background(TabBarSuppressor())
     }
 }
 
