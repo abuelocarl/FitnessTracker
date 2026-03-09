@@ -49,7 +49,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            // Ocean background — fills everything
+            // Ocean gradient — fills the entire screen
             LinearGradient(
                 colors: [.oceanDeep, .oceanMid, .seafoam],
                 startPoint: .top,
@@ -57,24 +57,26 @@ struct ContentView: View {
             )
             .ignoresSafeArea()
 
-            // Tab content — no TabView, so iOS never renders a system tab bar
-            ZStack {
+            // TabView with NAMED items so iOS never shows "?" placeholders.
+            // .toolbar(.hidden) removes the system bar; BeachTabBar drives
+            // tab switching instead.
+            TabView(selection: $selectedTab) {
                 TodayView(vm: vm)
-                    .opacity(selectedTab == 0 ? 1 : 0)
-                    .allowsHitTesting(selectedTab == 0)
+                    .tabItem { Label("Hydrate", systemImage: "drop.fill") }
+                    .tag(0)
 
                 ProfileView(vm: vm)
-                    .opacity(selectedTab == 1 ? 1 : 0)
-                    .allowsHitTesting(selectedTab == 1)
+                    .tabItem { Label("Profile", systemImage: "person.fill") }
+                    .tag(1)
             }
-            .animation(.easeInOut(duration: 0.2), value: selectedTab)
+            .toolbar(.hidden, for: .tabBar)
+            .background(.clear)
+            .background(TabBarSuppressor())  // belt-and-suspenders UIKit safety net
 
             BeachTabBar(selectedTab: $selectedTab)
         }
         .task { await vm.onAppear() }
         .preferredColorScheme(.dark)
-        .toolbarVisibility(.hidden, for: .tabBar)
-        .background(TabBarSuppressor())
     }
 }
 
@@ -148,6 +150,7 @@ struct TodayView: View {
             .padding(.horizontal, 20)
             .padding(.top, 16)
         }
+        .scrollContentBackground(.hidden)
     }
 
     // MARK: Header
@@ -502,6 +505,7 @@ struct ProfileView: View {
             .padding(.horizontal, 20)
             .padding(.top, 16)
         }
+        .scrollContentBackground(.hidden)
         .onAppear { weightText = String(format: "%.0f", vm.weightLbs) }
     }
 
